@@ -1,0 +1,39 @@
+<!DOCTYPE HTML5>
+<html class="no-js">
+
+<head>
+    <title> v-model example </title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <style>
+        .example {
+            border: 1px blue solid;
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app'>
+        <input type="radio" v-model="rValue" value = "0" name="rGroup">ㅌ`
+        <input type="radio" v-model="rValue" value = "1" name="rGroup">배
+        <input type="radio" v-model="rValue" value = "2" name="rGroup">귤
+        <p>
+            <span v-if="rValue==0">사과를 좋아합니다.</span>
+            <span v-else-if="rValue==1">배를 좋아합니다.</span>
+            <span v-else">귤을 좋아합니다.</span>
+        </p>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                rValue : 0
+            }
+        })
+    </script>
+
+
+</body>
+</html>
