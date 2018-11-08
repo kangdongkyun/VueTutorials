@@ -1,0 +1,40 @@
+<!DOCTYPE HTML5>
+<html class="no-js">
+
+<head>
+    <title> v-model example </title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <style>
+        .example {
+            border: 1px blue solid;
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app'>
+       <div class="example">
+            <p>message : {{message}}</p>
+            <span title="마우스오버">커서를 올리시오.</span>
+            <br>
+            <span v-bind:title="message">커서를 올리면 message를 볼 수 있어요.</span>
+            <br>
+            <!-- v-bind 생략가능 -->
+            <span :title="message">커서를 올리면 message를 볼 수 있어요.</span>
+       </div>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message : "Hello Vue.js!"                
+            }
+        })
+    </script>
+
+
+</body>
+</html>
