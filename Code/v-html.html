@@ -1,0 +1,34 @@
+<!DOCTYPE HTML5>
+<html class="no-js">
+
+<head>
+    <title> v-model example </title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <style>
+        .example {
+            border: 1px blue solid;
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app'>
+        <div v-html="htmlText">
+
+        </div>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                htmlText : "<span><b>텍스트</b> 입니다.</span>"                
+            }
+        })
+    </script>
+
+
+</body>
+</html>
