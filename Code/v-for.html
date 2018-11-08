@@ -1,0 +1,44 @@
+<!DOCTYPE HTML5>
+<html class="no-js">
+
+<head>
+    <title> v-model example </title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <style>
+        .example {
+            border: 1px blue solid;
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app'>
+        <ul>
+            <li v-for="(item, index) in items" v-bind:key="item.key">
+                | 키 : {{item.key}} , 값 : {{item.value}} , 인덱스 : {{index}} |
+            </li>
+        </ul>
+        <!-- 직접 꺼내고 싶을때 -->
+        세번째 아이템 : | 키 : {{items[2].key}} |
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                items:[
+                        {key :'0',value:'영'},
+                        {key :'1',value:'일'},
+                        {key :'2',value:'이'},
+                        {key :'3',value:'삼'},
+                        {key :'4',value:'사'}
+                    ],
+            }
+        })
+    </script>
+
+
+</body>
+</html>
