@@ -1,0 +1,36 @@
+<!DOCTYPE HTML5>
+<html class="no-js">
+
+<head>
+    <title> v-model example </title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <style>
+        .example {
+            border: 1px blue solid;
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app'>
+        <input type="checkbox" v-model="cValue" value="0" name="checkGroup" > 체크하세요.
+        <p v-show="cValue">
+            <span>사과는 맛있다.</span>
+
+        </p>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                cValue : 0
+            }
+        })
+    </script>
+
+
+</body>
+</html>
