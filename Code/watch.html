@@ -14,7 +14,7 @@
 
 <body>
     <div id='app'>
-       <p>fullName : ""{{fullName}}"</p>
+       <p>fullName : "{{fullName}}"</p>
        <input v-model="firstName">
     </div>
 
@@ -22,11 +22,18 @@
         var app = new Vue({
             el: '#app',
             data: {
-                firstName:''
+                firstName:'',
+                fullName:''
             },
             computed: {
-                fullName:function(){
-                    return this.firstName+"님";
+                // fullName:function(){
+                //     return this.firstName+"님";
+                // }
+            },
+            watch:{
+                firstName:function(newVal){
+                    this.fullName = newVal;
+                    alert('값이 바뀌었습니다.')
                 }
             }
         })
