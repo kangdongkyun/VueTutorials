@@ -19,6 +19,8 @@
        <br>
        <p>  {{msg2}}  </p>
        <button @click="changeText">텍스트 변경</button>
+       <br>
+        <p> {{reverse}}</p>
     </div>
 
     <script>
@@ -26,7 +28,8 @@
             el: '#app',
             data: {
                 msg1 : "안녕하세요!",
-                msg2 : "KOREATECH"
+                msg2 : "KOREATECH",
+                msg3 : "강동균"
             },
             methods:{
                 reverseText: function(){
@@ -35,6 +38,13 @@
                 changeText: function(){
                     this.msg2 = '한국기술교육대학교';
                 }
+            },
+            computed :{
+                
+                reverse: function(){
+                    return this.msg3 = this.msg3.split('').reverse().join('');
+                }
+            
             }
 
         })
