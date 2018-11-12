@@ -1,0 +1,46 @@
+<html class="no-js">
+
+<head>
+    <title> v-model example </title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <style>
+        .example {
+            border: 1px blue solid;
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app'>
+       <p>  {{msg1}}  </p>
+       <button v-on:click="reverseText">뒤집기</button>
+       <br>
+       <p>  {{msg2}}  </p>
+       <button @click="changeText">텍스트 변경</button>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                msg1 : "안녕하세요!",
+                msg2 : "KOREATECH"
+            },
+            methods:{
+                reverseText: function(){
+                    this.msg1 = this.msg1.split('').reverse().join('');
+                },
+                changeText: function(){
+                    this.msg2 = '한국기술교육대학교';
+                }
+            }
+
+        })
+    </script>
+
+
+</body>
+
+</html>
