@@ -1,0 +1,46 @@
+<html class="no-js">
+
+<head>
+    <title>  example </title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <style>
+        .example {
+            border: 1px blue solid;
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app'>
+       <slot-ex>
+            <h2>한국기술교육대학교1</h2>
+            <h2>한국기술교육대학교2</h2>
+            <h2>한국기술교육대학교3</h2>
+            <h2>한국기술교육대학교4</h2>
+       </slot-ex>  
+    </div>
+
+    <script>
+        var comp1 = {
+            template : '<div>\
+                            <h3>아래는 슬롯 영역입니다.</h3>\
+                            <slot>\
+                                <p>전달된 내용이 없습니다..</p>\
+                            </slot>\
+                        </div>',
+        };
+        Vue.component('slot-ex',comp1);
+        var app = new Vue({
+            el: '#app',
+            data: {
+
+            }
+        })
+    </script>
+
+
+</body>
+
+</html>
