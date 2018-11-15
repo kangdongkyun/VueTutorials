@@ -1,0 +1,55 @@
+<html class="no-js">
+
+<head>
+    <title> v-model example </title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <style>
+        .example {
+            border: 1px blue solid;
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app'>
+        <p>
+            합계 : {{ totalcount }}
+        </p>
+        
+        <inc-button @addone="plusone"></inc-button>
+        <inc-button @addone="plusone"></inc-button>
+        <inc-button @addone="plusone"></inc-button>
+            
+    </div>
+
+    <script>
+        var comp1 = {
+            template : '<button v-on:click="inc">{{count}}</button>',
+            data: function(){return {count:0}},
+            methods:{
+                inc:function(){
+                    this.count = this.count +1;
+                    this.$emit("addone");
+                }
+            }
+        };
+        Vue.component('IncButton',comp1);
+        var app = new Vue({
+            el: '#app',
+            data: { totalcount:0 },
+            methods:{
+                
+                plusone :function(){
+                    this.totalcount += 1
+                }
+                
+            }
+        })
+    </script>
+
+
+</body>
+
+</html>
