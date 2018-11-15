@@ -14,24 +14,19 @@
 
 <body>
     <div id='app'>
-        <my-component></my-component>
-        <my-component></my-component>
-        <my-component></my-component>
-        <my-component></my-component>
-        <my-component></my-component>
+        <child my-message="KOREATECH"> </child>
+            
     </div>
 
     <script>
         var comp1 = {
-            template : '<div>{{name}}사용자 정의 컴포넌트입니다.</div>',
-            data:function(){
-                return {name :"hello!"}
-            }
-        };
+            props :['myMessage'],
+            template : '<div> 전달된 메세지 : {{ myMessage }} </div>',
         
+        };
+        Vue.component('child',comp1);
         var app = new Vue({
             el: '#app',
-            components : {'my-component': comp1},
             data: {  }
         })
     </script>
