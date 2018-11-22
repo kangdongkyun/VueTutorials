@@ -1,6 +1,7 @@
 <template>
     <div>
         <p>  {{msg1}}  </p>
+       
        <button v-on:click="reverseText">뒤집기</button>
        <br>
        <p>  {{msg2}}  </p>

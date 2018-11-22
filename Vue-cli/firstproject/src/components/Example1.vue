@@ -7,11 +7,17 @@
         <br>
         <!-- v-bind 생략가능 -->
         <span :title="message">커서를 올리면 message를 볼 수 있어요.</span>
-    </div>
+        <example3></example3>
+    </div>    
 </template>
 
 <script>
+    import Example3 from '@/components/Example3'
+
     export default {
+        components:{
+            Example3
+        },
         data() {
             return {
                 message : "Hello Vue.js!"
